@@ -17,6 +17,7 @@ import "../../node_modules/prismjs/themes/prism.css";
 class Example extends React.Component {
   constructor(props) {
     super(props); // Must run the constructor of React.Component first
+    this.handleClick = this.handleClick.bind(this);
 
     // Components have a special property named "state" that holds state.
     // We can initialize it here.
@@ -38,6 +39,10 @@ class Example extends React.Component {
     // Note: A commmon idiom in React code is to use JavaScript bind() to
     // smash the method to accomplish this passthrough to the method:
     //      this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleClick(e) {
+    this.props.navigate("/states");
   }
 
   // React components have several "lifecycle functions"
@@ -107,6 +112,14 @@ class Example extends React.Component {
   render() {
     return (
       <div className="container Example">
+        <button
+          className="btn"
+          onClick={(e) => {
+            this.handleClick(e);
+          }}
+        >
+          Change to State Page
+        </button>
         <Header />
         <h1>CS142 Project#4 React.js Example</h1>
 

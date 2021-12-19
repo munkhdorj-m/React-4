@@ -2,7 +2,6 @@ import React from "react";
 import "./States.css";
 
 import Search from "./Search";
-import Header from "../header/Header";
 
 class States extends React.Component {
   constructor(props) {
@@ -14,7 +13,7 @@ class States extends React.Component {
   }
 
   render() {
-    return <Search />;
+    return <Search navigate={this.props.navigate} />;
   }
 }
 

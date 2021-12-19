@@ -2,12 +2,18 @@ import React from "react";
 import { useState } from "react";
 import Header from "../header/Header";
 
-const search = () => {
+const Search = (props) => {
   const [searchTerm, setSearchterm] = useState("");
-  const states = window.cs142models.statesModel();
-  const noRes = "no";
+
   return (
     <div className="App">
+      <button
+        onClick={() => {
+          props.navigate("/example");
+        }}
+      >
+        Change to Example Page
+      </button>
       <Header />
       <input
         type="text"
@@ -16,7 +22,8 @@ const search = () => {
           setSearchterm(event.target.value);
         }}
       />
-      {states
+      {window.cs142models
+        .statesModel()
         .filter((val) => {
           if (searchTerm == "") {
             return val;
@@ -35,8 +42,4 @@ const search = () => {
   );
 };
 
-export default search;
-
-{
-  /* <div>No Result</div>; */
-}
+export default Search;

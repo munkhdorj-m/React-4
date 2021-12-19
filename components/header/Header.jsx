@@ -7,7 +7,7 @@ const Header = () => {
     <section className="header">
       <section className="header-top">
         <section className="header-top__logo">
-          <img classNade="header-logo" src="/images/logo.jpg" alt="" />
+          <img className="header-logo" src="/images/logo.jpg" alt="" />
         </section>
         <section className="header-top__navbar">
           <section className="header-top__navigation">
